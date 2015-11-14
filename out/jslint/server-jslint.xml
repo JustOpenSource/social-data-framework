@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jslint>
+<file name="src/utils/app.js">
+<issue line="8" char="8" reason="Unexpected dangling '_' in '__base'." evidence="global.__base = __dirname + '/';"/>
+<issue line="8" char="17" reason="Unexpected dangling '_' in '__dirname'." evidence="global.__base = __dirname + '/';"/>
+<issue line="10" char="17" reason="Unexpected dangling '_' in '__base'." evidence="var c = require(__base + 'constants');"/>
+<issue line="10" char="17" reason="'__base' was used before it was defined." evidence="var c = require(__base + 'constants');"/>
+<issue line="23" char="28" reason="Unexpected dangling '_' in '__dirname'." evidence="app.set('views', path.join(__dirname, '../views'));"/>
+<issue line="32" char="46" reason="Unexpected dangling '_' in '__dirname'." evidence="app.use(require('less-middleware')(path.join(__dirname, 'public')));"/>
+<issue line="33" char="34" reason="Unexpected dangling '_' in '__dirname'." evidence="app.use(express.static(path.join(__dirname, 'public')));"/>
+</file>
+<file name="src/utils/server.js">
+</file>
+</jslint>

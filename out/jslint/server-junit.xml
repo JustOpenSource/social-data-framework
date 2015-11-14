@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite>
+<testcase classname="src.utils.app" name="app:8:8">
+  <failure message="Unexpected dangling '_' in '__base'." />
+</testcase>
+<testcase classname="src.utils.app" name="app:8:17">
+  <failure message="Unexpected dangling '_' in '__dirname'." />
+</testcase>
+<testcase classname="src.utils.app" name="app:10:17">
+  <failure message="Unexpected dangling '_' in '__base'." />
+</testcase>
+<testcase classname="src.utils.app" name="app:10:17">
+  <failure message="'__base' was used before it was defined." />
+</testcase>
+<testcase classname="src.utils.app" name="app:23:28">
+  <failure message="Unexpected dangling '_' in '__dirname'." />
+</testcase>
+<testcase classname="src.utils.app" name="app:32:46">
+  <failure message="Unexpected dangling '_' in '__dirname'." />
+</testcase>
+<testcase classname="src.utils.app" name="app:33:34">
+  <failure message="Unexpected dangling '_' in '__dirname'." />
+</testcase>
+<testcase classname="src.utils.server" name="server:0:0"></testcase>
+  </testsuite>
+</testsuites>
