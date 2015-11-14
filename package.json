@@ -5,9 +5,9 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
-    "grunt-githooks" : "*",
-    "eslint" : "*",
-    "grunt-eslint" : "*",
+    "grunt-githooks": "*",
+    "eslint": "*",
+    "grunt-eslint": "*",
     "grunt": "*",
     "grunt-simple-mocha": "*",
     "grunt-jsdoc": "*",
@@ -49,6 +49,7 @@
   },
   "homepage": "https://github.com/JustOpenSource/social-data-framework",
   "devDependencies": {
+    "grunt-githooks": "^0.3.1",
     "grunt-jsdoc": "^1.0.0"
   }
 }

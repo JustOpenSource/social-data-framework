@@ -10,7 +10,7 @@ function Main(){
     * runs the server
     */
     this.runServer = function(){
-        console.log('run server 1');
+        console.log('run server 2');
 
         //require(__dirname + '/utils/server.js')();
     }

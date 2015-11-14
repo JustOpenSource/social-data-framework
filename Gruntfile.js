@@ -54,5 +54,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['simplemocha', 'jsdoc', 'eslint']);
+    grunt.registerTask('default', ['simplemocha', 'jsdoc', 'eslint', 'githooks']);
 };
