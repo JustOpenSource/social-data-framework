@@ -7,13 +7,9 @@
 //set base global so require can use absolute paths
 global.__base = __dirname + '/';
 
-var c = require(__base + 'constants');
-var log = c.getLog('explore/app');
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hogan = require('hogan-express');
 var app = express();

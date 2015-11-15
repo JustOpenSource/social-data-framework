@@ -10,7 +10,7 @@ function Main(){
     * runs the server
     */
     this.runServer = function(){
-        console.log('run server 2');
+        
 
         //require(__dirname + '/utils/server.js')();
     }
@@ -19,7 +19,7 @@ function Main(){
     * runs when a new instance of Main is created
     */
     function init(){
-        console.log('SDF Engine init()');
+        
     }
 
     init();

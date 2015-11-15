@@ -38,7 +38,8 @@ module.exports = function(grunt) {
         eslint: {
 
             options: {
-                rules: require('./conf/eslint/rules/eslint.json')
+                rules: require('./conf/eslint/rules.json'),
+                configFile: 'conf/eslint/config.json'
             },
 
             target: ['*js', 'src/*.js', 'src/**/*.js', 'test/**/*.js']
@@ -49,7 +50,7 @@ module.exports = function(grunt) {
         githooks: {
             all: {
                 // Will run the jshint and test:unit tasks at every commit 
-                'pre-commit': ['simplemocha', 'jsdoc', 'eslint'],
+                'pre-commit': ['simplemocha', 'jsdoc', 'eslint']
             }
         }
     });

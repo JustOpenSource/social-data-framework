@@ -1,0 +1,12 @@
+{
+    "globals" : {
+       "module" : true,
+       "require" : true,
+       "console" : true,
+       "global" : true,
+       "__dirname" : true,
+       "describe" : true,
+       "it" : true,
+       "__base" : true
+    }
+}
