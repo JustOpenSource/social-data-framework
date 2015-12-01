@@ -7,15 +7,17 @@
 //set base global so require can use absolute paths
 global.__base = __dirname + '/';
 
-var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var hogan = require('hogan-express');
+
+var express = require('express');
 var app = express();
 
 // view engine setup
 app.engine('html', hogan);
+
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'html');
 app.set('layout', 'layout');
