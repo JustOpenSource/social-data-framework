@@ -1,1 +1,1 @@
-getRecords.js
+module.exports = {};

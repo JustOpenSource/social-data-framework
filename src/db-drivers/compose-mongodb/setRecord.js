@@ -1,1 +1,1 @@
-setRecord.js
+module.exports = {};

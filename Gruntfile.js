@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
             coverage: {
             
-                src: ['test/*.js', 'test/**/*.js'],
+                src: ['test/**/*.js'],
                 options: {
             
                     coverageFolder: 'coverage',

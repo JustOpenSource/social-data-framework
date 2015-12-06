@@ -5,6 +5,7 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
+    "social-data-framework-schemas" : "0.0.1",
     "grunt-githooks": "*",
     "grunt-blanket" : "*",
     "eslint": "*",
@@ -42,16 +43,20 @@
     "underscore": "1.8.3",
     "winston": "1.0.1"
   },
+
   "repository": {
     "type": "git",
     "url": "https://github.com/JustOpenSource/social-data-framework.git"
   },
+
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JustOpenSource/social-data-framework/issues"
   },
+
   "homepage": "https://github.com/JustOpenSource/social-data-framework",
+
   "devDependencies": {
     "grunt-githooks": "^0.3.1",
     "grunt-jsdoc": "^1.0.0"
