@@ -1,4 +1,4 @@
-var app = require('../../src/utils/appDefinition.js');
+var app = require('../../src/utils/app.js');
 
 var assert = require('assert');
 

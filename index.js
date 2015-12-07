@@ -9,6 +9,7 @@ var q = require('q');
 */
 function Main(){
 
+    //private variables
     var config;
     var db;
 
@@ -18,27 +19,21 @@ function Main(){
     this.start = function(instanceRoot){
 
         config = new Config(instanceRoot);
-        db = new Db(config);
+        dbService = new Db(config);
 
-        function startServer(database){
-
-            var app = require('./src/utils/appDefinition');
-            require('./src/utils/appSetup')(app, config);
-            require('./src/utils/appRoutes')(app);
-            require('./src/utils/appStartServer')(app);
+        function startServer(db){
+            
+            dbService.setDatabase(db);
+            var app = require(__dirname + '/src/utils/app')(config, dbService);
         }
 
-        db.connect(config).then(startServer);
+        dbService.connect(config).then(startServer);
     }
 
     /**
     * runs when a new instance of Main is created
     */
-    function init(){
-        
-    }
-
-    init();
+    //INIT
 }
 
 module.exports = Main;

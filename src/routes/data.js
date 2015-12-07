@@ -1,9 +1,11 @@
 var router = require('express').Router();
 
-router.route('/')
+
+router.route('/api/:version/')
 .get(function(req, res){
 
     
+
 });
 
 module.exports = router;

@@ -1,0 +1,36 @@
+<div class="col-md-12">
+    <i>{{user.username}}</i>
+
+    {{#user.roles}}
+    <span class="fe-user-role">{{name}}</span>
+    {{/user.roles}}
+</div>
+
+<div class="col-md-12">
+    <ul class="nav nav-pills col-md-9">
+
+        <li class=""><a href="/">{{_str.home}}</a></li>
+
+        <li role="presentation" class=""><a href="/list">{{_str.list}}</a></li>
+
+        <li role="presentation" class=""><a href="/visualize">{{_str.visualize}}</a></li>
+
+        <li role="presentation" class=""><a href="/data">{{_str.data-api}}</a></li>
+
+        <li role="presentation" class="nav-item-standout"><a href="/details/new">{{_str.report}}</a></li>
+    </ul>
+
+    <ul class="nav nav-pills col-md-3">
+
+        {{#user.username}}
+        <span class="fe-user-role pull-right">{{.}}</span>
+        {{/user.username}}
+
+        {{^user.username}}
+        <li role="presentation" class="pull-right"><a href="/login/">{{_str.login}}</a></li>
+        {{/user.username}}
+        
+        <li role="presentation" class="pull-right"><a href="/contact">{{_str.contact}}</a></li>
+
+    </ul>
+</div>

@@ -6,7 +6,6 @@ describe('Db', function() {
 
     var VALID_DRIVER_NAME = 'compose-mongodb';
     var TEST_DB = new Db(testConfg);
-
     var METHODS = [
         'connect',
         'getCount',
@@ -14,7 +13,8 @@ describe('Db', function() {
         'getDistinct',
         'getRecord',
         'setRecord',
-        'setStatus'
+        'setStatus',
+        'import'
     ];
 
     describe('"new" constructor', function () {

@@ -1,6 +1,5 @@
-function validateConfig(){
-    //
-}
+var v = require('./validateModel');
+var dbModels = require('./dbDriverModels');
 
 /**
 * The database utility
@@ -10,9 +9,22 @@ function validateConfig(){
 
 function Db(config){
 
-    validateConfig(config);
+    v(config, {
     
+        "system" : {
+            "type" : "object",
+            "properties" : {
+                "database_driver" : {
+                    "type" : "string"
+                }
+            },
+            "required" : ["database_driver"]
+        }
+
+    }, ["system"]);
+
     var t = this;
+    
     var driver_root = __dirname + '/../db-drivers/' + config.system.database_driver + '/';
 
     t.methods = [
@@ -22,30 +34,39 @@ function Db(config){
         'getDistinct',
         'getRecord',
         'setRecord',
-        'setStatus'
+        'setStatus',
+        'import'
     ];
 
-    /**
-    * adds the db methods to 'this'
-    * @param methodName {string} - the name of the method to add to 'this'
-    */
-    function getDbMethods(methodName){
+    t.methods.forEach(function(methodName){
 
         var driverPath = driver_root + methodName;
 
-        try{
-
-            t[methodName] = require(driverPath);
+        try {
+            
+            var tempDriver = require(driverPath);
 
         } catch(e){
 
             throw new Error('Cannot find db driver at ' + driverPath);
         }
-    }
 
-    t.methods.forEach(function(method){
-        getDbMethods(method);
+        t[methodName] = function(d){
+                
+            dbModels[methodName].param(d);
+
+            var tempReturn = tempDriver(d);
+
+            dbModels[methodName].return(tempReturn);
+
+            return tempReturn;
+        }
     });
+    
+    t.setDatabase = function(db){
+        
+        t.db = db;
+    }
 }
 
 module.exports = Db;

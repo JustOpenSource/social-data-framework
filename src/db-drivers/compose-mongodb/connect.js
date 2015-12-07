@@ -1,8 +1,24 @@
 var MongoClient = require('mongodb').MongoClient;
 var q = require('q');
-//var log = require('../utils/log');
+var log = require(__dirname + '/../../utils/log')('db-drivers/compose-mongodb/connect');
+var v = require(__dirname + '/../../utils/validateModel');
 
 function connect(config){
+
+    v(config, {
+    
+        "system" : {
+            "type" : "object",
+            "properties" : {
+                "database_url" : {
+                    "type" : "string"
+                }
+            },
+            
+            "required" : ["database_url"]
+        }
+
+    }, ["system"]);
 
     var deferred = q.defer();
 
